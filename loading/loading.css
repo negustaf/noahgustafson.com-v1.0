@@ -1,0 +1,158 @@
+@media screen {
+/* PULSE EFFECT */
+@keyframes pulsar {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.88);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes pulsar {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.88);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes pulsar {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.88);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-ms-keyframes pulsar {
+  0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.88);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*PULSE EFFECT*/
+/* THREE OPTIONS FOR PULSE EFFECT:
+1. 0% (min scale value) and 100% (max scale value) keyframes with 'alternate' variable in 'animation' element.
+2. 0% (min scale value), 50% (max scale value), 100% (min scale value) keyframes without 'alternate' variable.
+3. 0% {
+    transform: scale(0.85);
+  }
+  25% {
+    transform: scale(0.88);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+  to ease the transition of each animation sequence and use 'alternate' variable in 'animation' alement. */
+.load-img-desktop {
+  animation: pulsar 1.5s infinite linear alternate; /* linear variable solved uneven pulsing problem */
+  width: 150px;
+  height: 150px;
+}
+.load-img-mobile {
+  display: none;
+}
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* PULSING BACKGROUND COLOR
+@keyframes transcolor {
+  0% {
+    background-color: #7ec3f7;
+  }
+  100% {
+    background-color: #D496A7;
+  }
+}
+@-webkit-keyframes transcolor {
+  0% {
+    background-color: #7ec3f7;
+  }
+  100% {
+    background-color: #D496A7;
+  }
+}
+@-moz-keyframes transcolor {
+  0% {
+    background-color: #7ec3f7;
+  }
+  100% {
+    background-color: #D496A7;
+  }
+}
+@-ms-keyframes transcolor {
+  0% {
+    background-color: #7ec3f7;
+  }
+  100% {
+    background-color: #D496A7;
+  }
+}*/
+#loader-main {
+  /*animation: transcolor 1.5s infinite linear alternate;*/
+  background-color: var(--layer-1);
+}
+/* PULSING BACKGROUND COLOR FADEOUT
+#loader-main.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}*/
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+} /*END @MEDIA SCREEN*/
+@media (max-width:600px) {
+  /* PULSE EFFECT */
+  .load-img-mobile {
+    animation: pulsar 1.5s infinite linear alternate;
+    display: block;
+  }
+  .load-img-desktop {
+    display: none;
+  }
+} /*END @MEDIA SCREEN (MAX-WIDTH:600PX*/
