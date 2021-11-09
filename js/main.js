@@ -34,7 +34,7 @@ function openExternalLinkedIn() {
 // Open Resume
 function openExternalResumePDF() {
   var myWindow = window.open(
-    'https://negustaf.github.io/noahgustafson.com-v1.0/noah_gustafson-resume-pm-OUTDATEDLINK.pdf','_blank' // <- This is what makes it open in a new window.
+    'https://noahgustafson.com/404-file-not-found.html','_blank' // <- This is what makes it open in a new window.
   );
 }
 // Open GitHub
